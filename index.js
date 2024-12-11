@@ -32,7 +32,7 @@ app.post("/api/gemini/prompt/send", async (req, res) => {
 
     const aiResponse = await getResponse(prompt);
     return res.status(200).json({
-      response: `${aiResponse}`,
+      response: aiResponse,
     });
   } catch (err) {
     console.error(`Error occurred in file: index.js, function: post -`, err);
