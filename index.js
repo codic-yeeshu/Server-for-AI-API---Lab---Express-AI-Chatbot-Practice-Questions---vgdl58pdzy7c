@@ -17,8 +17,8 @@ async function getResponse(prompt) {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   const result = await model.generateContent(prompt);
-  // console.log(result);
-  return result.response;
+  // console.log(result.response);
+  return result;
 }
 
 app.post("/api/gemini/prompt/send", async (req, res) => {
