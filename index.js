@@ -18,7 +18,7 @@ async function getResponse(prompt) {
 
   const result = await model.generateContent(prompt);
   // console.log(result.response);
-  return result;
+  return result.response;
 }
 
 app.post("/api/gemini/prompt/send", async (req, res) => {
