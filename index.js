@@ -17,13 +17,14 @@ async function getResponse(prompt) {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   const result = await model.generateContent(prompt);
-  return result.response.text();
+  // console.log(result);
+  return result.response;
 }
 
 app.post("/api/gemini/prompt/send", async (req, res) => {
   try {
     const { prompt } = req.body;
-
+    // console.log(prompt);
     if (!prompt || prompt == "")
       return res.status(400).json({
         message: "Please send a valid prompt",
